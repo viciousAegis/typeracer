@@ -1,38 +1,163 @@
+:root {
+  --background-color: #fef6e4;
+  --heading: #001858;
+  --text: #172c66;
+  --accent: #f582ae;
+  --accent-text: #001858;
+  --bg-secondary: #f3d2c1;
+  --accent-secondary: #8bd3dd;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: var(--background-color);
+  color: var(--text);
   min-height: 100vh;
+}
+
+/* sticky header */
+.header-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--accent-text);
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content-section {
+  display: flex;
+  height: calc(100vh - 150px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.race-track {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  height: 10rem;
+  width: 50%;
+  min-width: 400px;
+  padding: 20px;
+  background-color: var(--bg-secondary);
+  color: var(--text);
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(221, 16, 98, 0.596);
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 700;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-box-value {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.car-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.car-progress-bar-track {
+  position: relative;
+  width: 80%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.car-progress-bar-svg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.text-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 10rem;
+  width: 50%;
+  min-width: 400px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  border: 2px solid var(--accent-text);
+}
+
+.text-container {
+  color: var(--text);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-bottom: 20px;
+}
+
+.type-input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--accent);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.current-word {
+  text-decoration: underline;
+}
+
+.highlighted-word {
+  color: gray;
+}
+
+.typed-word {
+  color: grey;
+}
+
+.current-char {
+  color: var(--accent);
+}
+
+.wrong-input {
+  color: red;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--accent-secondary);
 }

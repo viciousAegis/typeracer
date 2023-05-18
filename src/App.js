@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderBar from './components/HeaderBar';
+import ContentSection from './ContentSection';
+import { texts } from './data/text';
 
 function App() {
+  // choose a random text from the texts array
+  const randomIndex = Math.floor(Math.random() * texts.length);
+  const randomText = texts[randomIndex];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <HeaderBar />
+      <ContentSection
+        text={randomText}
+      />
     </div>
   );
 }
